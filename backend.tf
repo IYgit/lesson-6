@@ -6,16 +6,16 @@ terraform {
     }
   }
 
-  backend "s3" {
-    bucket         = "terraform-state-ivan-yanchyk-lesson5-dev"
-    key            = "lesson-5/terraform.tfstate"
-    region         = "eu-central-1"
-    dynamodb_table = "terraform-locks"
-    encrypt        = true
-  }
+  # backend "s3" {
+  #   bucket         = "terraform-state-ivan-yanchyk-lesson5-dev"
+  #   key            = "lesson-6/terraform.tfstate"
+  #   region         = "eu-central-1"
+  #   dynamodb_table = "terraform-locks"
+  #   encrypt        = true
+  # }
+
+  backend "local" {}
 }
 
-# terraform {
-#   backend "local" {}
-# }
+
 

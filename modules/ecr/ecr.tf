@@ -12,5 +12,3 @@ resource "aws_ecr_repository" "main" {
     Environment = var.environment
   }
 }
-
-# Решта конфігурації (політики та інше) також можна додати сюди

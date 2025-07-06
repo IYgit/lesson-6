@@ -30,3 +30,20 @@ output "ecr_repository_url" {
   description = "URL репозиторію ECR"
   value       = module.ecr.repository_url
 }
+
+# Виходи з модуля EKS
+output "eks_cluster_endpoint" {
+  description = "Endpoint EKS кластера"
+  value       = module.eks.cluster_endpoint
+}
+
+output "eks_cluster_name" {
+  description = "Назва EKS кластера"
+  value       = module.eks.cluster_name
+}
+
+output "eks_cluster_certificate_authority" {
+  description = "Сертифікат авторизації кластера"
+  value       = module.eks.kubeconfig_certificate_authority_data
+  sensitive   = true
+}

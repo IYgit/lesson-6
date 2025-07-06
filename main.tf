@@ -28,3 +28,13 @@ module "ecr" {
   repository_name = "lesson-5-app"
   scan_on_push    = true
 }
+
+# Модуль EKS
+module "eks" {
+  source = "./modules/eks"
+
+  environment          = "dev"
+  cluster_name        = "lesson-6-cluster"
+  vpc_id              = module.vpc.vpc_id
+  private_subnet_ids  = module.vpc.private_subnet_ids
+}
