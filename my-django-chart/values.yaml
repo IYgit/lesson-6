@@ -1,0 +1,25 @@
+# values.yaml
+image:
+  repository: 045552220539.dkr.ecr.eu-central-1.amazonaws.com/dev-lesson-5-app
+  tag: django-1.0
+  pullPolicy: Always
+
+service:
+  type: LoadBalancer
+  port: 8000
+  targetPort: 8000
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 6
+  targetCPUUtilizationPercentage: 70
+
+configMap:
+  POSTGRES_DB: django_db
+  POSTGRES_USER: django_user
+  POSTGRES_PASSWORD: pass9764gd
+  POSTGRES_HOST: db
+  POSTGRES_PORT: "5432"
+  DEBUG: "True"
+  DJANGO_ALLOWED_HOSTS: "*"
